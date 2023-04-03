@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/listHitsView">
+
+    <fragment
+        android:id="@+id/listHitsView"
+        android:label="ListHitsView"
+        android:name="io.studio.pixabayapp.view.ListHitsFragment"
+        tools:layout="@layout/hits_list_fragment">
+        <action
+            android:id="@+id/action_listHitsView_to_hitsDetailsFragment"
+            app:destination="@id/hitsDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hitsDetailsFragment"
+        android:label="HitsDetailsFragment"
+        android:name="io.studio.pixabayapp.view.HitsDetailsFragment"
+        tools:layout="@layout/hit_details_fragment" >
+        <argument
+            android:name="hit"
+            app:argType="io.studio.pixabayapp.view.model.HitUiModel" />
+    </fragment>
+</navigation>

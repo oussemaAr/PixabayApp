@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@id/image_guide_line"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/image_guide_line"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.60" />
+
+    <TextView
+        style="@style/TextAppearance.Material3.TitleMedium"
+        android:id="@+id/username"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_guide_line"
+        tools:text="Oussema Aroua" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/tags"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/username" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/likes_container"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/slot_one"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tags">
+
+        <TextView
+            android:id="@+id/like_count"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:padding="8dp"
+            android:textAlignment="center"
+            app:drawableTopCompat="@drawable/ic_like"
+            tools:text="150 like" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/comment_container"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toStartOf="@id/slot_two"
+        app:layout_constraintStart_toEndOf="@+id/slot_one"
+        app:layout_constraintTop_toBottomOf="@+id/tags">
+
+        <TextView
+            android:id="@+id/comment_count"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:padding="8dp"
+            android:textAlignment="center"
+            app:drawableTopCompat="@drawable/ic_comment"
+            tools:text="150 like" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/download_container"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/slot_two"
+        app:layout_constraintTop_toBottomOf="@+id/tags">
+
+        <TextView
+            android:id="@+id/download_count"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:padding="8dp"
+            android:textAlignment="center"
+            app:drawableTopCompat="@drawable/ic_download"
+            tools:text="150 like" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/slot_one"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/slot_two"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.66" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
